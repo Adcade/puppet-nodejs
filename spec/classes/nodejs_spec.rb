@@ -18,10 +18,7 @@ describe 'nodejs', :type => :class do
       'name'    => 'nodejs',
       'require' => 'Anchor[nodejs::repo]',
     }) }
-    it { should contain_package('npm').with({
-      'name'    => 'npm',
-      'require' => 'Anchor[nodejs::repo]',
-    }) }
+    it { should contain_package('npm') }
     it { should_not contain_package('nodejs-stable-release') }
   end
 
@@ -45,10 +42,7 @@ describe 'nodejs', :type => :class do
       'require' => 'Anchor[nodejs::repo]',
     }) }
     it { should contain_package('nodejs-dev') }
-    it { should contain_package('npm').with({
-      'name'    => 'npm',
-      'require' => 'Anchor[nodejs::repo]',
-    }) }
+    it { should contain_package('npm') }
     it { should_not contain_package('nodejs-stable-release') }
   end
 
